@@ -1,0 +1,200 @@
+.about
+	padding: 90px 0 68px
+	+tab
+		padding: 90px 0 64px
+	+mob
+		padding: 50px 0 20px
+	&__top, &__middle
+		display: flex
+		margin-bottom: 91px
+		.col
+			&:last-child
+				padding: 0 90px 0 86px
+		+mob
+			margin-bottom: 40px
+	&__top
+		.icons-wrapper
+			display: flex
+			justify-content: center
+			align-items: flex-end
+			//margin: 0 auto 46px auto
+			margin-bottom: 46px
+			.icon-maincharacter
+				flex: 0 1 300px
+				height: 300px
+				margin-right: 10px
+				+mob
+					flex: 0 1 200px
+					height: 200px
+			.icon-girl
+				flex: 0 1 300px
+				height: 300px
+				+mob
+					flex: 0 1 200px
+					height: 200px
+			+desk
+				display: none
+			+mob
+				margin-bottom: 30px
+
+		.col:first-child
+			padding-right: 80px
+			+tab
+				width: 100%
+				.title
+					width: 80%
+		+tab
+			flex-direction: column
+			.col
+				padding: 0!important
+				+container-tab
+				&:first-child
+					margin-bottom: 65px
+					padding: 0
+		+mob
+			flex-direction: column
+			.col:first-child
+				margin-bottom: 30px
+	&__middle
+		margin-bottom: 106px
+		p
+			padding-bottom: 33px
+		+tab
+			flex-direction: column
+			+container-tab
+			.col
+				width: 100%
+				padding: 0
+				&:first-child
+					margin-bottom: 56px
+				&:last-child
+					padding: 0
+		+mob
+			flex-direction: column
+			.col
+				&:first-child
+					margin-bottom: 40px
+				&:last-child
+					padding: 0
+	&__bot
+		display: flex
+		position: relative
+		.icon-man
+			position: absolute
+			bottom: 50px
+			right: 40px
+			width: 300px
+			height: 300px
+			+tab
+				display: none
+			+mob
+				display: none
+		.col:first-child
+			width: 33.33%
+			padding-right: 33px
+			.title
+				letter-spacing: 2.5px
+			+tab
+				margin-bottom: 45px
+		.col:last-child
+			width: 66.66%
+			padding: 9px 90px 0 14px
+		.title
+			text-align: right
+			+tam
+				text-align: left
+			+mob
+				font-size: 40px
+		+tab
+			flex-direction: column
+			margin-top: 87px
+			.title
+				max-width: 60%
+			.col:first-child
+				width: 100%
+				padding: 0
+			.col:last-child
+				padding: 0
+				+container-tab
+		+mob
+			flex-direction: column
+			.col:first-child, .col:last-child
+				width: 100%
+	&__video
+		height: 320px
+		width: 100%
+		position: relative
+		img
+			+cover-img
+		+tab
+			height: 300px
+		+mob
+			height: 260px
+			margin: 0 -30px
+			width: calc(100% + 60px)
+	&__title
+		margin-bottom: 19px
+		+h3
+		letter-spacing: .5px
+		line-height: 24px;
+
+		+tab
+			letter-spacing: 2px
+			margin-bottom: 21px
+		+mob
+			font-size: 14px
+	&__text
+		padding-top: 3px
+		p:not(:last-child)
+			margin-bottom: 46px
+			+mob
+				margin-bottom: 30px
+		+tab
+			+container-tab
+	ol
+		display: flex
+		flex-wrap: wrap
+		flex-direction: column
+		counter-reset: num
+		+mob
+			margin-top: 40px
+		& > li
+			max-width: 350px
+			width: 100%
+			padding-left: 110px
+			margin-bottom: 49px
+			position: relative
+			counter-increment: step-counter
+			&:before
+				+h3
+				font-family: $BenderBold
+				letter-spacing: .5px
+				line-height: 18px
+				color: $pink
+				content: '0' counter(step-counter)
+				position: absolute
+				top: 2px
+				left: 60px
+				+mob
+					font-size: 14px
+					left: 0
+			&:nth-child(even)
+				//padding-left: 125px
+				&::before
+					//left: 76px
+					+mob
+						//left: 0
+				+tab
+					//padding-left: 70px
+					&::before
+						//left: 17px
+				+mob
+					//padding-left: 40px
+			+tab
+				padding-left: 55px
+				&::before
+					left: 0
+			+mob
+				margin-bottom: 38px
+				padding-left: 40px
+				width: 100%

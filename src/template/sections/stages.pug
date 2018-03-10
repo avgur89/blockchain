@@ -1,0 +1,17 @@
++b.SECTION.stages
+	.container.container_large
+		+b.title_white-dark Основные этапы
+			span проекта
+		.container
+			-
+				stagesDate = ['01.12.17 - 31.12.17', '01.12.17 - 31.12.17', '01.12.17 - 31.12.17', '01.12.17 - 31.12.17', '01.12.17 - 31.12.17', '01.12.17 - 31.12.17', '01.12.17 - 31.12.17']
+				stagesText = ['ICO - этап сбора инвеститорамиций', 'Разработка полностью рабочей платформы на Bitshares (веб интерфейс и мобильное приложение)', 'Запуск масштабной маркетинговой компании во всем мире', 'Проведение первого шоу и получение первого дохода', 'Примерная дата выхода на самоокупаемость', 'Расчитываемая аудитория 10 000 000', 'Выход на 100 000 000 аудиторию']
+			each item, index in stagesDate
+				if index > 3
+					+e.item
+						+e.date(data-text-anim data-delay= index-4)= item
+						+e.text(data-text-anim data-delay= index-4)= stagesText[index]
+				else
+					+e.item
+						+e.date(data-text-anim data-delay= index)= item
+						+e.text(data-text-anim data-delay= index)= stagesText[index]

@@ -1,0 +1,29 @@
++b.SECTION.screen
+	+e.media
+		+e.IMG.img(srcset='static/img/bg-screen.png' alt='image')
+		+e.VIDEO.video_cap(src='static/videos/video_1.mp4' poster='' autoplay muted loop)
+	+e.container.container
+		//+customBtn('video-popup-js', 'static/videos/video_0.mp4', '', 'video')
+		a(href="#!").play-btn.video-popup-js(data-video-src = 'static/videos/video_0.mp4' data-popup-target= 'video')
+			svg(version='1.1', xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='120px', height='120px', viewbox='0 0 120 120')
+				g
+					g.svg-wrap
+						polyline.svg-part(points='111.9,90.1 111.9,90 120,60')
+						polyline.svg-part(points='8.1,90.1 30,111.9 30.1,112')
+						line.svg-part(x1='30.1', y1='112', x2='60', y2='120')
+						line.svg-part(x1='60', y1='120', x2='89.9', y2='112')
+						polyline.svg-part(points='89.9,112 90,111.9 111.9,90.1')
+						polyline.svg-part(points='0,60 8,90 8.1,90.1')
+						polyline.svg-part(points='8,30.1 0,60 0,60')
+						polyline.svg-part(points='112,30.1 111.9,30 90,8.1')
+						polyline.svg-part(points='120,60 120,60 112,30.1')
+						polyline.svg-part(points='90,8.1 90,8 60,0')
+						polyline.svg-part(points='60,0 30,8 29.9,8.1')
+						polyline.svg-part(points='29.9,8.1 8,30 8,30.1')
+					path.triangle(d='M56,68V52l12,8L56,68z')
+		+e.A.next-section(href="#anchor-0")
+			span
+		+e.info
+			+e.title.title Bit talent-
+			+e.descr(data-text-anim) Первое мировое независимое блокчейн шоу талантов
+			+btn('sign-popup-js', 'Sign up for updates', '', 'sign')

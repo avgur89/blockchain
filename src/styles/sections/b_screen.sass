@@ -1,0 +1,165 @@
+.screen
+	position: relative
+	top: 0
+	left: 0
+	overflow: hidden
+	color: $white
+	min-height: 100vh
+	&__container
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 2
+		+desk-large-1600
+			width: 1140px
+			max-width: 1140px
+		.play-btn
+			//.triangle
+			//	transition: transform .5s ease
+			//.no-touch &
+			//	&:hover
+			//		.triangle
+			//			transforM: scale(1.5)
+			+mob
+				width: 80px
+		+tab
+			max-width: 100%
+			width: calc(100% - 100px)
+	&__media
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 1
+		background-color: $dark
+		&::after
+			content: ''
+			width: 100%
+			height: 100%
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			background-color: rgba(0,0,0, .45)
+			z-index: 5
+	&__descr
+		+subtitle
+		margin-bottom: 32px
+		+mob
+			font-size: 14px
+			line-height: 18px
+			letter-spacing: 1.5px
+			margin-bottom: 33px
+		+mob-land
+			max-width: 220px
+	&__img
+		+cover-img
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 0
+	&__info
+		width: 420px
+		position: absolute
+		bottom: 63px
+		left: 0
+		+trs-out
+		.btn
+			text-align: center
+		+tab
+			//top: 50%
+			//bottom: inherit
+			//transform: translateY(-50%)
+			bottom: 40px
+		+tab-land
+			bottom: 40px
+		+mob
+			bottom: 27px
+			width: 100%
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: flex-end
+			.btn
+				width: 100%
+				max-width: 300px
+				margin: 0 auto
+	&__next-section
+		height: 60px
+		width: 11px
+		position: absolute
+		bottom: 65px
+		left: calc(50% - 5px)
+		display: block
+		animation: nextScreen 4s ease-in-out infinite
+		+trs-out
+		span
+			position: absolute
+			height: 100%
+			width: 1px
+			left: 5px
+			top: 0
+			background-color: white
+			transition: all .6s ease-in-out
+		.no-touch &
+			&:hover span
+				background-color: $pink
+		+mob
+			display: none
+	&__title
+		+h1
+		letter-spacing: 4px
+		//margin-bottom: 77px
+		margin-bottom: 30px
+		margin-left: -6px
+		+desk-large-1600
+			//margin-bottom: 207px
+		+tab
+			//margin-bottom: 338px
+			margin-left: 0
+		+tab-land
+			//margin-bottom: 140px
+		+mob
+			margin-left: 0
+			//position: absolute
+			//left: -3px
+			//top: 114px
+			font-size: 40px
+			max-width: 220px
+			letter-spacing: 0px
+			line-height: 40px
+			margin-bottom: 20px
+			//margin-bottom: 40px
+	&__video
+		+cover-video
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 2
+		cursor: pointer
+		&_main
+			display: none
+
+.js-main-video-play
+	.screen
+		&__info
+			opacity: 0
+			transform: translateX(-100%)
+			+trs-in
+		&__next-section
+			opacity: 0
+			transform: translateY(100%)
+			+trs-in
+		&__video
+			&_main
+				z-index: 5
+				display: block
+		&__media::after
+			display: none

@@ -1,0 +1,69 @@
+.language
+	height: 12px
+	+f($Bender, 12px, 12px, 1.2px, uppercase)
+	transition: .3s all linear
+	pointer-events: auto
+	.header_dark &
+		color: $dark
+	&__title
+		cursor: pointer
+		min-width: 50px
+		position: relative
+		display: inline-flex
+		align-items: center
+		justify-content: flex-start
+		transition: 0s all linear
+		padding: 0 3px 0 8px
+		& > svg
+			position: absolute
+			top: 0
+			right: 0
+			&:first-child
+				left: 0
+				right: inherit
+				transform: rotate(-180deg)
+		.no-touch &
+			&:hover
+				color: $pink
+				b
+					border-color: transparent transparent $pink transparent
+		b
+			position: absolute
+			right: 6px
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 3px 3px 3px
+			border-color: transparent transparent $white transparent
+			transform: translateY(-1px) rotate(-180deg)
+			will-change: transform
+			.header_dark &
+				border-color: transparent transparent $dark transparent
+		&.is-active
+			b
+				transform-origin: center
+				transform: translateY(-1px)
+	&__item
+		+trs
+		.no-touch &
+			&:hover
+				color: $pink
+		&.is-active
+			color: $pink
+	ul
+		display: none
+		margin-top: 6px
+		li
+			a
+				padding-left: 8px
+				display: block
+				line-height: 24px
+	+mob
+		position: absolute
+		right: 55px
+
+.js-main-video-play
+	.language
+		opacity: 0
+		transform: translateX(100%)
+		+trs-in

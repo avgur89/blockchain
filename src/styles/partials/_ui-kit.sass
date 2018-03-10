@@ -1,0 +1,129 @@
+.btn
+	position: relative
+	display: inline-block
+	overflow: hidden
+	//border: 1px solid $pink
+	box-shadow: 0px 0px 0px 1px $pink
+	z-index: 1
+	+f($Bender, 12px, 24px, 2.6px, uppercase)
+	padding: 17px 40px
+	align-self: baseline
+	color: $white
+	&::before
+		display: block
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: $pink
+		transform: translateX(0) scale(1.3)
+		margin: -1px
+		box-sizing: border-box
+		z-index: -1
+		+trs-in
+	.no-touch &
+		&:hover
+			color: $pink
+			&::before
+				transform: translateX(110%)
+				+trs-out
+	&_download
+		padding: 17px 67px 17px 86px
+		svg
+			font-size: 10px
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateX(60px) translateY(-50%)
+	&.disabled
+		pointer-events: none
+		opacity: .5
+
+.play-btn
+	width: 120px
+	height: auto
+	background: none
+	position: relative
+	z-index: 3
+	border: none
+	outline: none
+	padding: 0
+	will-change: transform
+	transition: transform .6s linear
+	+center
+	&:after
+		content: ''
+		display: block
+		padding-bottom: 100%
+	svg
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+	.dodecagon
+		fill: none
+		stroke: $pink
+		transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1)
+		stroke-width: 4px
+	.triangle
+		fill: $white
+		transition: .4s
+	.no-touch &
+		&:hover
+			.dodecagon
+				stroke-width: 115px
+	&:active, &.active
+		.dodecagon
+			stroke-width: 62px
+		.triangle
+			fill: $pink
+			transition: .5s
+	&_small
+		width: 80px
+		min-width: 80px
+		position: static
+		transform: translateY(0)
+		&::before
+			background-color: $dark
+		.dodecagon
+			stroke: $dark
+			transition: 0s all linear
+		.no-touch &
+			&:hover
+				.dodecagon
+					stroke: $white
+					stroke-width: 115px
+					transition: 2s all linear
+	+mob
+		width: 80px
+.close-video-btn
+	position: fixed
+	top: 20px
+	right: 20px
+	color: $pink
+	z-index: 5
+	border: none
+	opacity: 0
+	pointer-events: none
+	+trs
+	svg
+		font-size: 22px
+		transition: .6s transform ease-in-out
+	.popup__container_info &
+		color: $dark
+	.no-touch &
+		&:hover
+			svg
+				transform: rotate(360deg)
+
+.js-main-video-play
+	.play-btn
+		transform: scale(0)
+	.close-video-btn
+		opacity: 1
+		pointer-events: auto

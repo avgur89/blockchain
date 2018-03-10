@@ -1,0 +1,31 @@
++b.SECTION.about
+    .container.container_large
+        +e.top.two-col
+            .col
+                +b.title_dark-pink Шоу талантов собирают аудиторию
+                    span в десятки миллионов людей
+            +e.text.col(data-text-anim)
+                p Только в 2017 году будет проведено свыше 100 различных шоу талантов в более чем 60 странах мира с примерной аудиторией более 100 000 000 человек. А процент перехода тв шоу в онлайн растет с каждым годом. За последние пять лет процент зрителей, смотревших шоу онлайн вырос в 8 раз.
+                .icons-wrapper(data-text-anim)
+                    img(src="static/img/Maincharacter.svg" class="icon-maincharacter")
+                    img(src="static/img/girl.svg" class="icon-girl")
+                p Мы хотим создать единое мировое шоу талантов, где каждый с любой точки мира сможет проявить себя, а победителя определит мировое сообщество, без каких-либо посредников.
+        +e.middle
+            .col
+                +e.video
+                    img(src='static/img/video-cap.jpg' alt='image')
+                    +customBtn('video-popup-js', 'static/videos/video_2.mp4', '', 'video')
+            .col
+                +e.title(data-text-anim) about project
+                p(data-text-anim) BITTALENT - первая в мире децентрализованная онлайн  площадка, где каждый может проявить себя и показать свой талант. Уникальный шанс сразиться за право стать следующим мировым талантом  с людьми из любого уголка мира и выиграть джек пот.
+                +btn('btn_download', 'Whitepaper', 'download')
+        +e.bot
+            .col
+                +b.title_dark-pink._large bit talent-
+                    span этo
+            ol.col.list_two
+                -listLi = ['Никаких ограничений на участие.', 'Просто загружайте ролик и вступай в битву моментально.', 'Лайкайте, голосуйте и делайте ставки в реальном времени на своих кумиров.']
+                    each item, index in listLi
+                        li(data-text-anim data-delay = index)= item
+                img(src="static/img/man.svg" class="icon-man" data-text-anim)
+

@@ -1,0 +1,99 @@
+// Fonts mixins:
+=f($name, $font-size: null, $line-height: null, $letter-spacing: null, $text-transform :null)
+	font-family: $name, Arial, sans-serif
+	font-weight: normal
+	@if $font-size != null
+		font-size: $font-size
+	@if $line-height != null
+		line-height: $line-height
+	@if $letter-spacing != null
+		letter-spacing: $letter-spacing
+	@if $text-transform != null
+		text-transform: $text-transform
+
+=h1
+	+f($BenderBlack, 80px, 80px, 0em, uppercase)
+=h2
+	+f($BenderBlack, 60px, 60px, 0em, uppercase)
+=h3
+	+f($BenderBold, 18px, 24px, 0.1em, uppercase)
+=h4
+	+f($BenderBold, 12px, 16px, 0.1em, uppercase)
+=h5
+	+f($Bender, 12px, 14px, 0.1em, uppercase)
+=regular
+	+f($Geometria, 14px, 24px, 0.005em, normal)
+=small
+	+f($Geometria, 12px, 14px, 0.03em, normal)
+=subtitle
+	+f($Bender, 18px, 30px, 2px, uppercase)
+
+
+
+// Object-fit mixins:
+=cover-img
+	width: 100%
+	height: 100%
+	min-height: 100%
+	object-fit: cover
+	font-family: 'object-fit: cover;'
+
+=cover-video
+	width: 100%
+	height: 100%
+	object-fit: cover
+	font-family: 'object-fit: cover;'
+
+=center
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+	
+// Media:
+=container-tab
+	width: 530px
+	margin: 0 auto
+
+// You can add your own mixins here:
+$break-small: 766px
+$break-large: 767px
+$only-desk: 1199px
+$break-large-right: 1200px
+$break-large-desktop-1600: 1600px
+$break-large-desktop-2000: 2000px
+$desk-height-700: 700px
+
+=mob
+	@media only screen and (max-width: $break-small)
+		@content
+=mob-land
+	@media only screen and (max-width: $break-small) and (orientation: landscape)
+		@content
+=tab
+	@media only screen and (min-width: $break-large) and (max-width: $break-large-right - 1)
+		 @content
+=tab-land
+	@media only screen and (min-width: $break-large) and (max-width: $break-large-right - 1) and (orientation: landscape)
+		@content
+=tab-portrait
+	@media only screen and (min-width: $break-large) and (max-width: $break-large-right) and (orientation: portrait)
+		@content
+=tam
+	@media only screen and (max-width: $break-large-right - 1)
+		@content
+=desk-large-1600
+	@media only screen and (min-width: $break-large-desktop-1600) and (max-width: $break-large-desktop-2000 - 1)
+		@content
+=desk-large-2000
+	@media only screen and (min-width: $break-large-desktop-2000)
+		 @content
+=desk
+	@media only screen and (min-width: $only-desk)
+		 @content
+=desk-height-700
+	@media only screen and (min-width: $only-desk)  and (max-height: $desk-height-700)
+		 @content
+=desk-to-1600
+	@media only screen and (min-width: $only-desk) and (max-width: $break-large-desktop-1600 - 1)
+		 @content

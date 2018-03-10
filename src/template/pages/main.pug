@@ -1,0 +1,49 @@
+extends ../extend/default
+
+block variables
+	- var title = 'Blockchain';
+
+block main
+	main
+		include ../sections/screen
+		div(id="anchor-0" data-section-caption='о проекте')
+			.block-white
+				include ../sections/about
+			.block-dark
+				include ../sections/how
+				include ../sections/money
+		div(id="anchor-1" data-section-caption='o Ico')
+			.block-white
+				include ../sections/ico
+			.block-white
+				include ../sections/timer
+			.block-dark
+				include ../sections/ico_slider
+			.block-white
+				include ../sections/data
+				include ../sections/diagram
+			.block-dark
+				include ../sections/stages
+		.block-dark(id="anchor-2" data-section-caption='Документы')
+			include ../sections/documents
+		div(id="anchor-3" data-section-caption='команда')
+			.block-white
+				include ../sections/team-1
+				include ../sections/team-2
+				include ../sections/team-3
+			.block-dark
+				include ../sections/logo-1
+		.block-dark(id="anchor-4" data-section-caption='faq')
+			include ../sections/faq
+		.block-white
+			div(id="anchor-5" data-section-caption='Мы в прессе')
+				include ../sections/logo-2
+			div(id="anchor-6" data-section-caption='новости')
+				include ../sections/news
+
+	// Popups
+	include ../popups/people-popup
+	include ../popups/sign-popup
+	include ../popups/news-popup
+	include ../popups/video-popup
+	include ../popups/thanks-popup

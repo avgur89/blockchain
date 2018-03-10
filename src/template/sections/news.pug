@@ -1,0 +1,19 @@
++b.SECTION.news
+	.container.container_large
+		+b.title_pink
+			span.top новости
+		.container
+			+e.BUTTON.prev
+				+svg('arrow')
+			+e.BUTTON.next
+				+svg('arrow')
+			+e.slider
+				-
+					newsImg = ['static/img/news-1.jpg', 'static/img/news-2.jpg', 'static/img/news-3.jpg', 'static/img/news-2.jpg', 'static/img/news-3.jpg', 'static/img/news-1.jpg', 'static/img/news-2.jpg'],
+					newsDate = ['10/11/2017', '10/12/2017', '20/12/2017', '10/12/2017', '20/12/2017', '10/12/2017', '20/12/2017'],
+					newsText = ['Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.'];
+				each item, index in newsImg
+					+e.A.item.news-popup-js(href="#!" data-popup-target="news" data-text-anim data-delay= index)
+						+e.IMG.img(srcset= item alt='image')
+						+e.DIV.date= newsDate[index]
+						+e.DIV.text.dot-ellipsis.dot-resize-update.dot-height-80= newsText[index]

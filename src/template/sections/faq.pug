@@ -1,0 +1,17 @@
++b.SECTION.faq
+	.container.container_large
+		+b.title_white
+			span.top F.A.Q.
+		.container
+			+e.tab(data-text-anim)
+				- var faqTitle = ['о проекте', 'ico', 'безопасность', 'категория 4']
+				each faq, index in faqTitle
+					+e.A.item(href='#!' data-text-anim data-delay= 2*index)
+						span.tl
+						span.tr
+						span.bl
+						span.br
+						span.tab-caption= faq
+			+e.info
+				+accordion([0, 1, 2, 3])
+

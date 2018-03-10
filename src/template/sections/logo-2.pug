@@ -1,0 +1,13 @@
++b.SECTION.logo_press
+	.container.container_large
+		+b.title
+			span.top Мы в прессе
+		.container
+			- var logoList = ['static/img/logo-1.svg']
+			each item, index in logoList
+				if index > 3
+					+e.A.item_link(href="google.com.ua" data-text-anim data-delay= 2 * (index - 4))
+						img(src=item alt='image')
+				else
+					+e.A.item_link(href="google.com.ua" data-text-anim data-delay= 2 * index)
+						img(srcset=item alt='image')

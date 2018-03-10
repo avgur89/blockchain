@@ -1,0 +1,131 @@
+.timeline
+	$p : &
+	display: flex
+	margin-top: 37px
+	+mob
+		width: 260px
+		justify-content: space-between
+	&__item
+		width: 80px
+		position: relative
+		margin-right: -6px
+		span
+			user-select: none
+		button
+			transform: scale(0)
+			pointer-events: none
+			transition: transform .4s linear
+		&:not(:last-child)
+			&::before
+				content: ''
+				position: absolute
+				top: 46%
+				right: -16px
+				width: 36px
+				height: 1px
+				background-color: $white
+				+mob
+					width: 18px
+		&.is-active
+			button
+				transform: scale(1)
+				transition: transform .4s linear
+			#{$p}__text
+				color: $dark
+				span:nth-child(2)
+					display: block
+		.no-touch &
+			&:hover
+				z-index: 1
+				button
+					transform: scale(1)
+					transition: transform .3s linear
+					.dodecagon
+						stroke: $white
+						stroke-width: 115px
+				#{$p}__text
+					color: $blue
+		+tab
+			margin-right: 0
+		+mob
+			width: 40px
+			.play-btn
+				width: 40px
+				min-width: 40px
+				margin-top: 3px
+	&__text
+		width: 40px
+		pointer-events: none
+		+f($BenderBold, 14px, 18px, 0.2px, uppercase)
+		position: absolute
+		top: 31px
+		left: 33px
+		letter-spacing: 1px
+		color: $white
+		+trs
+		span:nth-child(2)
+			visibility: hidden
+		+mob
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			text-align: center
+			padding-bottom: 3px
+	&__item.is-active
+		span:nth-child(2)
+			visibility: visible
+	&_diagram
+		transform: translateX(-32px)
+		+tam
+			left: calc(50% - 32px)
+			width: 100%
+			transform: translateX(-50%)
+			+container-tab
+			position: absolute
+			top: 951px
+			#{$p}__item
+				margin-right: 22px
+				&:not(:last-child)
+					&::before
+						right: -29px
+		+mob
+			left: 50%
+			margin-left: -130px
+			top: 455px
+			transform: translateX(0)
+			#{$p}__item
+				margin-right: 0
+				&:not(:last-child)
+					&::before
+						right: -11px
+				#{$p}__text
+					text-align: left
+					position: absolute
+					top: 39px
+					left: 32px
+					line-height: 26px
+					font-size: 12px
+					letter-spacing: .2px
+	&_video
+		margin-top: 39px
+		transform: translateX(-33px)
+		#{$p}__item
+			margin-right: 13px
+			&:not(:last-child)
+				&::before
+					right: -24px
+					+tab
+						right: -42px
+					+mob
+						right: -16px
+			+tab
+				margin: 0 24px
+		+tab
+			+container-tab
+			margin: 15px auto 0
+			transform: translateX(-70px)
+		+mob
+			transform: translateX(0)
+			#{$p}__item
+				margin-right: 0
+			margin-top: 20px

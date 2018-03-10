@@ -1,0 +1,147 @@
+body
+	width: 100%
+	min-height: 100vh
+	flex-direction: column
+	font-family: $Bender
+	display: flex
+	color: $dark
+	+regular
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	text-rendering: optimizeLegibility
+	&.is-overflow
+		overflow: hidden
+.burger
+	top: 10px
+	right: 15px
+	position: fixed
+	margin-top: 6px
+	border: none
+	cursor: pointer
+	z-index: 2
+	color: $white
+	.header_dark &
+		color: $dark
+
+// Container:
+.container
+	position: relative
+	max-width: 945px
+	width: 945px
+	margin: 0 auto
+	&_large
+		max-width: 1140px
+		width: 1140px
+		flex-direction: column
+	+tab
+		width: 530px
+		margin: 0 auto
+		max-width: 530px
+		&_large
+			width: calc(100% - 100px)
+			max-width: calc(100% - 100px)
+	+mob
+		width: calc(100% - 60px)
+		max-width: calc(100% - 60px)
+		&_large
+			width: calc(100% - 60px)
+			max-width: calc(100% - 60px)
+
+.svg-part
+	display: block
+	stroke: $pink
+.triangle
+	fill: #fff
+	
+// Col:
+.col
+	width: 50%
+	display: flex
+	flex-direction: column
+	+mob
+		width: 100%
+		padding: 0!important
+	
+.svg-text
+	color: green
+	svg
+		fill: green
+	.st0
+		fill: gold
+	.svg1
+		fill: brown
+	.svg2
+		fill: blue
+
+// Fonts:
+.h1
+	+h1
+.h2
+	+h2
+.h3
+	+h3
+	
+.subtitle
+	+subtitle
+
+// Main title styles:
+.title
+	& > div:not(:last-child)
+		white-space: nowrap
+	span
+		display: block
+		& > div
+			white-space: nowrap
+	+h2
+	&_large
+		+h1
+	&_dark-pink
+		color: $dark
+		span
+			color: $pink
+	&_white-pink
+		color: $white
+		span
+			color: $pink
+	&_pink-dark
+		color: $pink
+		span
+			color: $dark
+	&_white-dark
+		color: $white
+		span
+			color: $dark
+	&_white
+		color: $white
+	&_pink
+		color: $pink
+	+mob
+		font-size: 30px
+		line-height: 34px
+
+// Slick customization:
+.slick-arrow
+	position: absolute
+	border: none
+	z-index: 1
+	+trs
+	color: $pink
+	svg
+		font-size: 9px
+	&.slick-disabled
+		visibility: hidden
+	.no-touch &
+		&:hover
+			color: $dark
+			
+// PS scrollbar customization:
+.ps__rail-y
+	width: 10px
+	opacity: 1!important
+	left: inherit!important
+	.ps__thumb-y
+		right: 0
+		width: 100%
+		border-radius: 0
+		background-color: $pink
+		opacity: 1!important

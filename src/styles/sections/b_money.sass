@@ -1,0 +1,65 @@
+.money
+	padding: 94px 0 104px
+	color: $white
+	background-color: $dark
+	&__img-wrap
+		height: 75px
+		display: flex
+		align-items: flex-end
+		margin-bottom: 28px
+		img
+			max-width: 75px
+			max-height: 75px
+			height: auto
+			width: auto
+		+tab
+			margin-bottom: 37px
+	&__title
+		+h3
+		letter-spacing: .5px
+		line-height: 24px;
+		margin-bottom: 20px
+		+tab
+			margin-bottom: 31px
+			letter-spacing: 2px
+		+mob
+			font-size: 14px
+	&__text
+		margin-bottom: 10px
+		letter-spacing: .4px
+	.title
+		max-width: 60%
+		margin-bottom: 70px
+		+tam
+			width: 100%
+			max-width: 100%
+		+mob
+			margin-bottom: 38px
+	.container
+		display: flex
+		.col
+			&:first-child
+				padding-right: 80px
+				padding-left: 5px
+			&:last-child
+				padding-left: 85px
+				+tab
+					margin-top: 65px
+				+mob
+					margin-top: 40px
+		&:not(.container_large)
+			+mob
+				width: 100%
+				max-width: 100%
+		+tab
+			flex-direction: column
+			.col:first-child, .col:last-child
+				width: 100%
+				padding: 0
+		+mob
+			flex-direction: column
+			.col:first-child, .col:last-child
+				width: 100%
+				padding: 0
+	+mob
+		padding: 50px 0 42px

@@ -1,0 +1,147 @@
+$sliderBg: #000
+
+.how
+	padding: 91px 0 118px
+	background-color: $blue
+	+tab
+		padding-bottom: 79px
+	+mob
+		padding: 60px 0 50px
+	.col
+		&:first-child
+			flex: 1 0 auto
+		&:last-child
+			flex: 1 0 auto
+			padding-left: 80px
+			padding-right: 100px
+	.info-column
+		position: relative
+		min-height: 430px
+		+tab
+			min-height: 800px
+		+mob
+			min-height: 725px
+	.container_large
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		+tab
+			flex-direction: column
+			.col
+				width: 100%
+				padding: 0
+	&__descr-wrap
+		position: relative
+		height: auto
+		+tab
+			+container-tab
+		+mob
+			min-height: 0
+	&__descr
+		position: absolute
+		color: $white
+		font-size: 16px
+		line-height: 24px
+		letter-spacing: .5px
+		top: 0
+		left: 0
+		opacity: 0
+		visibility: hidden
+		transform: translateY(100%)
+		transition: .35s all ease-in
+		pointer-events: none
+		&.is-active
+			position: static
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+			transition: .4s all ease-out .35s
+	&__slider-wrap
+		position: relative
+	&__img-wrap
+		width: 184px
+		height: 392px
+		position: absolute
+		top: 8px
+		right: 0
+		background-color: $sliderBg
+		img
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			+cover-img
+			//transition: opacity .6s linear
+			&.how__img.is-active
+				opacity: 0
+				//transition: opacity .6s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+		&::before
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 20px
+			height: 1px
+			background-color: #000
+			z-index: 1
+			+mob
+				display: none
+		+tab
+			top: 147px
+			right: calc(50% - 259px)
+		+mob
+			top: 110px
+			right: calc(50% - 92px)
+	&__video-wrap
+		position: absolute
+		width: 597px
+		height: 344px
+		top: 56px
+		right: 33px
+		img
+			//transition: opacity .6s linear
+		.how__img
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			+cover-img
+			//transition: opacity .6s linear
+			//&.is-active
+			//	opacity: 1
+			//	transition: opacity .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+		+tab
+			top: 194px
+			transform: translateX(50%)
+			right: calc(50% + 50px)
+		+mob
+			display: none
+	&__video
+		width: 455px
+		height: 285px
+		position: absolute
+		left: 72px
+		top: 20px
+		cursor: pointer
+		overflow: hidden
+		background-color: $sliderBg
+		video
+			+cover-video
+			//transition: opacity 600ms cubic-bezier(0.39, 0.575, 0.565, 1)
+			&.is-active
+				opacity: 0
+				//transition: opacity 400ms cubic-bezier(0.47, 0, 0.745, 0.715)
+	.timeline_video
+		position: absolute
+		bottom: 0
+		+tab
+			left: 40%
+			transform: translateX(-50%)
+	.title
+		margin-bottom: 63px
+		+tab
+			margin-bottom: 492px
+		+mob
+			margin-bottom: 460px

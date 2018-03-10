@@ -1,0 +1,38 @@
+-
+	sumItems = [{number: '567', desc: 'Bitcoin'}, {number: '478', desc: 'Ethereum'}, {number: '214141', desc: 'DASH'}, {number: '456793', desc: 'Litecoin'}, {number: '5678', desc: 'NEM'}, {number: '567', desc: 'Tether'}, {number: '4321', desc: 'Waves'}, {number: '67842', desc: 'Dollars'}];
+
++b.SECTION.timer
+	.container.container_large
+		+b.title_pink-dark Время до
+			span окончания ICO
+		.container
+			+b.countdown(data-text-anim data-delay="4")
+				+e.days.countdown__section
+					+e.text Дней
+				+e.hours.countdown__section
+					+e.text Часов
+				+e.minutes.countdown__section
+					+e.text Минут
+				+e.seconds.countdown__section
+					+e.text Секунд
+			+b.statistic(data-text-anim data-delay="6")
+				+e.item
+					+e.item-title Всего
+						span Участников
+					+e.item-number 83321
+				+e.item
+					+e.item-title Собранная
+						span сумма
+					+e.item-number 83321
+				+e.item
+					+e.item-title Осталось
+						span токенов
+					+e.item-number 654
+				+btn('', 'инвестировать', '', '')
+			+b.sum(data-text-anim data-delay="8")
+				+e.title Cобранные суммы
+				+e.inner
+					each sum in sumItems
+						+e.item
+							+e.item-number= sum.number
+							+e.item-desc= sum.desc

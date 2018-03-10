@@ -1,0 +1,19 @@
++b.SECTION.team
+	.container.container_large
+		+b.title_pink
+			span.top менеджмент
+		.container
+			+e.BUTTON.prev
+				+svg('arrow')
+			+e.BUTTON.next
+				+svg('arrow')
+			+e.slider
+				-
+					teamImg = ['static/img/team-1.png', 'static/img/team-2.png', 'static/img/team-3.png', 'static/img/team-4.png'],
+					teamTitle = ['Артем Басараба', 'Гари Остин', 'Кетрин', 'Артем Басараба'],
+					teamDescr = ['Co founder & CEO', 'Сeo & head of communications', 'CTO', 'Сeo & head of communications'];
+				each item, index in teamImg
+					+e.item.people-popup-js(href="#!" data-popup-target="people" data-text-anim data-delay= 1*index)
+						+e.IMG.img(srcset= item alt='image')
+						+e.DIV.title= teamTitle[index]
+						+e.DIV.descr= teamDescr[index]

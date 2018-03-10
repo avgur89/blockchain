@@ -1,0 +1,193 @@
+.ico
+    $p: &
+    padding: 91px 0 114px
+    padding-bottom: 0
+    +mob
+        padding: 56px 0 60px
+        padding-bottom: 0
+    .icon-Maincharacter
+        position: absolute
+        bottom: 0
+        left: -100px
+        width: 350px
+        height: 350px
+        +tab
+            display: none
+        +mob
+            display: none
+    //.icon-man
+    //    +desk
+    //        display: none
+    //    +tam
+    //        display: block
+    //        margin: 50px auto 0 auto
+    //        width: 300px
+    //        height: 300px
+    //    +mob
+    //        height: 200px
+    //        width: 200px
+    .container
+        position: relative
+        display: flex
+        padding-bottom: 25px
+        .col
+            &:first-child
+                padding-right: 40px
+                display: flex
+                flex-direction: column
+                .btn
+                    align-self: flex-end
+                    margin-top: 40px
+                    +tab
+                        margin-top: 0
+                        position: absolute
+                        top: 0
+                        right: 0
+                    +mob
+                        margin: 28px auto 0
+                        width: 100%
+                        max-width: 300px
+                        text-align: center
+            &:last-child
+                padding-left: 80px
+                padding-right: 20px
+                +tab
+                    padding-left: 85px
+                    padding-right: 15px
+                    margin-top: 50px
+                +mob
+                    margin-top: 55px
+        +tam
+            &:not(.container_large)
+                margin: 0
+                width: 100%
+                max-width: 100%
+                flex-direction: column
+                .col
+                    &:first-child
+                        width: 100%
+                        padding: 0
+                    &:last-child
+                        width: 100%
+                        padding: 0
+    &:not(.ico_slider)
+        .container
+            .col:last-child
+                +tab
+                    +container-tab
+                    margin-top: 50px
+            +mob
+                width: 100%
+    .title
+        text-align: right
+        +tam
+            text-align: left
+            max-width: 50%
+        +mob
+            max-width: 100%
+    &_slider
+        min-height: 600px
+        background-color: $blue
+        .title
+            text-align: left
+        .col
+            position: relative
+            padding-right: 0 !important
+        +tam
+            padding-bottom: 200px
+            #{$p}__info
+                top: 250px
+                left: 227px
+            .container
+                &:not(.container_large)
+                    .col
+                        &:first-child
+                            margin-top: 72px
+                            align-items: center
+                            .btn
+                                align-self: center
+                            order: 2
+                        &:last-child
+                            margin-top: 0
+        +mob
+            .container
+                &:not(.container_large)
+                    .col
+                        &:first-child
+                            margin-top: 35px
+    &__info
+        position: absolute
+        top: 216px
+        left: 134px
+        #{$p}__info-date, #{$p}__info-percent
+            opacity: 0
+            transform: translateY(100%)
+            transition: .35s all ease-in
+        &-percent
+            +f($BenderBold, 30px, 18px, .5px, uppercase)
+            margin-bottom: 25px
+            +tab
+                margin-bottom: 15px
+            +mob
+                font-size: 18px
+                margin-bottom: 8px
+        &-date
+            +f($BenderBold, 14px, 18px, 2.7px, normal)
+            color: $white
+            white-space: nowrap
+            +mob
+                font-size: 12px
+                letter-spacing: 2px
+        &-item
+            position: absolute
+            top: 100%
+            visibility: hidden
+            &.is-active
+                top: 0
+                visibility: visible
+                #{$p}__info-date, #{$p}__info-percent
+                    opacity: 1
+                    transform: translateY(0%)
+                    transition: .4s all ease-out .35s
+        +mob
+            top: 108px !important
+            left: 80px !important
+    &__svg-wrap
+        margin: 9px 0 0 3px
+        svg
+            width: 450px
+            height: 450px
+            .dodecagon
+                &--solid
+                    fill: none
+                    stroke: $white
+                    stroke-width: 1
+                    stroke-miterlimit: 10
+                &--center
+                    fill: none
+                    stroke: rgba(51, 51, 51, 0.8)
+                    stroke-width: 1
+                    stroke-miterlimit: 10
+                &--dotted
+                    fill: none
+                    stroke: $white
+                    stroke-width: .5
+                    stroke-miterlimit: 10
+                    stroke-dasharray: 3px
+            .circle
+                display: block
+                fill: none
+                stroke: $dark
+            .rect
+                fill: $white
+            +tab
+                width: 538px
+                height: 538px
+            +mob
+                width: 100%
+        +tam
+            margin: 0
+        +mob
+            svg
+                width: 260px
+                height: 260px

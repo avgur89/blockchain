@@ -1,0 +1,27 @@
+-
+	languageList = ['rus', 'eng', 'por', 'ger'];
+
+mixin header()
+	+b.HEADER.header
+		+e.container
+			//+e.A.logo.get-top(href="#!") bittalent
+			+e.A.logo.get-top(href="#!")
+				+svg('logo')
+			+b.language
+				+e.title
+					+svg('frame')
+					span= languageList[0]
+					b
+					+svg('frame')
+				each item, index in languageList
+					if index === 0
+						+e.LI.item.is-active
+							a(href="#!")= item
+					else
+						+e.LI.item
+							a(href="#!")= item
+		+e.NAV.nav
+			+b.UL.menu
+		button.close-video-btn
+			+svg('close-menu')
+

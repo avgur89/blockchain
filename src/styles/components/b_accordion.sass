@@ -1,0 +1,91 @@
+.accordion
+	$p : &
+	display: none
+	margin-top: 29px
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 2px
+		opacity: .2
+		background-image: url(../../static/img/line-white.svg)
+	&.is-active
+		display: block
+	button
+		border: none
+		align-items: center
+		display: inline-flex
+		padding: 0
+		width: 100%
+		position: relative
+		margin-top: -8px
+		&:not(:first-of-type)
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 2px
+				opacity: .2
+				background-image: url(../../static/img/line-white.svg)
+		.no-touch &
+			&:hover
+				#{$p}__item
+					color: $pink
+		+mob
+			padding-top: 27px
+			padding-bottom: 27px
+	+tab
+		margin-top: 40px
+	&__item
+		+h3
+		text-align: left
+		color: $white
+		letter-spacing: 1px
+		text-transform: none
+		padding-left: 65px
+		pointer-events: none
+		transition: color .4s linear
+		line-height: 70px
+		+mob
+			padding-left: 30px
+			font-size: 14px
+			line-height: 20px
+	&__content
+		color: $white
+		display: none
+		padding: 0 0 24px 78px
+		p
+			transform: translateY(-7px)
+			& + p
+				margin-top: 16px
+	&__toggle
+		display: inline-block
+		position: relative
+		width: 13px
+		height: 70px
+		min-width: 13px
+		span
+			padding: 0
+			display: inline-block
+			position: absolute
+			left: 0
+			top: calc(50% - 0.5px)
+			width: 13px
+			height: 1px
+			background-color: $pink
+			transition: transform .45s linear
+			&:last-child
+				transform: rotate(90deg)
+		button.is-active &
+			span
+				background-color: $white
+				transform: rotate(45deg)
+				&:last-child
+					transform: rotate(-45deg)
+		+mob
+			height: auto

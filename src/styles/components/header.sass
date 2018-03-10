@@ -1,0 +1,70 @@
+.header
+	width: 100%
+	height: 110px
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 3
+	color: $white
+	pointer-events: none
+	&__container
+		display: flex
+		height: 100%
+		justify-content: space-between
+		align-items: center
+		margin: 0 50px
+		position: relative
+		padding-top: 20px
+		padding-bottom: 20px
+		+mob
+			margin: 0 15px
+	&__logo
+		pointer-events: auto
+		display: flex
+		justify-content: center
+		align-items: center
+		.icon-logo
+			width: 130px
+			height: 40px
+			fill: $white
+			.header_dark &
+				fill: $dark
+		+f($Bender, 16px, 60px, 3.2px, uppercase)
+		+trs-out
+		.no-touch &
+			&:hover
+				color: $pink
+		.header_dark &
+			color: $dark
+	&__nav
+		position: fixed
+		bottom: 55px
+		right: 50px
+		text-align: right
+		+trs-out
+		pointer-events: auto
+		+tab
+			bottom: 45px
+		+mob
+			width: 100%
+			height: 100%
+			right: 0
+			bottom: 0
+			background-color: $dark
+			transform: translateX(100%)
+			transition: transform .5s linear
+			&.is-open
+				transform: translateX(0%)
+	+mob
+		height: 55px
+
+.js-main-video-play
+	.header
+		&__logo
+			opacity: 0
+			transform: translateX(-100%)
+			+trs-in
+		&__nav
+			opacity: 0
+			transform: translateX(100%)
+			+trs-in

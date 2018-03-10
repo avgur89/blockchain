@@ -1,0 +1,19 @@
++b.SECTION.team
+	.container.container_large
+		+b.title
+			span.top команда
+		.container
+			+e.BUTTON.prev
+				+svg('arrow')
+			+e.BUTTON.next
+				+svg('arrow')
+			+e.slider
+				-
+					teamImg = ['static/img/team-9.jpg', 'static/img/team-10.jpg'],
+					teamTitle = ['Артем Басараба', 'Гари Остин'],
+					teamDescr = ['Co founder & CEO', 'Сeo & head of communications'];
+				each item, index in teamImg
+					+e.item.people-popup-js(href="#!" data-popup-target="people" data-text-anim data-delay= 1*index)
+						+e.IMG.img(srcset= item alt='image')
+						+e.DIV.title= teamTitle[index]
+						+e.DIV.descr= teamDescr[index]

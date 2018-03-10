@@ -1,0 +1,57 @@
+-
+	sliderNumber = ['01', '02', '03', '04', '05', '06'],
+	dataStep = ['1', '2', '3', '4', '5', '6'],
+	dataPercent = ['30', '25', '20', '15', '10', '5'],
+	sliderPercent = ['30%', '25%', '20%', '15%', '10%', '5%'];
+
++b.SECTION.ico_slider
+	.container.container_large
+		.container
+			.col
+				+e.info
+					each text, index in sliderPercent
+						if index === 0
+							+e.info-item.is-active
+								+e.info-percent= text
+								+e.info-date 01 - 07 декабря
+						else
+							+e.info-item
+								+e.info-percent= text
+								+e.info-date 01 - 07 декабря
+				+e.svg-wrap
+					svg(version='1.1', xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', viewbox='0 0 451.5 451.5', style='enable-background:new 0 0 451.5 451.5;', xml:space='preserve')
+							defs
+								clippath#dodecagon-chart-clippath
+									path(d='M366,225.9l-18.8,70.1L296,347.2L225.9,366l-70.1-18.8l-51.3-51.3l-18.8-70.1l18.8-70.1\
+									l51.3-51.3l70.1-18.8l70.1,18.8l51.3,51.3L366,225.9z')
+							path.dodecagon.dodecagon--center(d='M366,225.9l-18.8,70.1L296,347.2L225.9,366l-70.1-18.8l-51.3-51.3l-18.8-70.1l18.8-70.1\
+							l51.3-51.3l70.1-18.8l70.1,18.8l51.3,51.3L366,225.9z', vector-effect='non-scaling-stroke')
+							path.dodecagon.dodecagon--dotted(d='M448.7,225.8l-29.8,111.4l-81.5,81.5L226,448.5l-111.4-29.8L33,337.2L3.2,225.8L33,114.4\
+							l81.5-81.5L226,3l111.4,29.8l81.5,81.5L448.7,225.8z')
+							path.dodecagon.dodecagon--solid(d='M448.7,225.8l-29.8,111.4l-81.5,81.5l-111.4,29.8l-111.4-29.8L33,337.2L3.1,225.8L33,114.4\
+							l81.5-81.5L225.9,3l111.4,29.8l81.5,81.5L448.7,225.8z')
+							rect.rect(x='415.9', y='111.4', width='6', height='6', vector-effect='non-scaling-stroke')
+							rect.rect(x='30', y='334.2', width='6', height='6', vector-effect='non-scaling-stroke')
+							rect.rect(x='415.8', y='334.2', width='6', height='6', vector-effect='non-scaling-stroke')
+							rect.rect(x='30', y='111.4', width='6', height='6', vector-effect='non-scaling-stroke')
+							rect.rect(x='222.9', y='0', width='6', height='6', vector-effect='non-scaling-stroke')
+							rect.rect(x='222.9', y='445.5', width='6', height='6', vector-effect='non-scaling-stroke')
+							circle.circle(clip-path='url(#dodecagon-chart-clippath)', stroke-width='162px', cx='226', cy='225.8', r='81')
+			.col
+				+b.title_white-dark этапы проведения ico
+					span и бонусы инвесторам
+				+b.timeline_diagram
+					each text, index in sliderNumber
+						if index === 0
+							+e.A.item.is-active(href="#!" data-step= dataStep[index] data-percent= dataPercent[index])
+								+customBtn('dodecagon-slider-js play-btn_small', '', 'empty')
+								+e.text
+									span= text
+									span этап
+						else
+							+e.A.item(href="#!" data-step= dataStep[index] data-percent= dataPercent[index])
+								+customBtn('dodecagon-slider-js play-btn_small', '', 'empty')
+								+e.text
+									span= text
+									span этап
+

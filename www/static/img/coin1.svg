@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="75px"
+	 height="75px" viewBox="0 0 75 75" style="enable-background:new 0 0 75 75;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EF0957;}
+	.st1{fill:#703BF6;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g id="Layer_2">
+	<path class="st0" d="M25,0h25v75H25V0z"/>
+	<path class="st1" d="M50,15h25v60H50V15z"/>
+	<path class="st1" d="M0,29h25v46H0V29z"/>
+</g>
+<g id="Layer_1">
+	<g>
+		<g>
+			<path class="st2" d="M15,45h1v-9h-1V45z M12,45h1v-9h-1V45z M9,45h1v-9H9V45z M64,22v9h1v-9H64z M60,31h1v-9h-1V31z M37,16h1V7
+				h-1V16z"/>
+		</g>
+	</g>
+</g>
+</svg>

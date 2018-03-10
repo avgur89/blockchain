@@ -1,0 +1,133 @@
+.stages
+	$p : &
+	padding: 91px 0 118px
+	background-color: $blue
+	+mob
+		padding: 55px 0 62px
+	.container_large
+		overflow: hidden
+	.container:not(.container_large)
+		display: flex
+		flex-wrap: wrap
+		+tab
+			+container-tab
+		+mob
+			flex-direction: column
+	&__item
+		width: 25%
+		padding-right: 50px
+		position: relative
+		color: $white
+		+desk
+			&:nth-child(5)
+				z-index: 3
+			&:nth-child(6)
+				z-index: 2
+			&:nth-child(7)
+				z-index: 1
+			&:nth-child(8)
+				z-index: 0
+		&:first-child, &:last-child
+			&::before
+				content: ''
+				position: absolute
+				top: 74px
+				left: 5px
+				width: 1000px
+				height: 2px
+				background-image: url(../../static/img/line.svg)
+				+mob
+					display: none
+		&:last-child
+			&::before
+				transform: translateX(-100%)
+				z-index: -1
+		+desk
+			&:nth-child(1n + 5)
+				margin-top: 31px
+		+tab
+			width: 50%
+			position: relative
+			padding-right: 15px
+			&:nth-child(odd)
+				left: -20px
+			&:nth-child(even)
+				left: -5px
+			&:nth-child(1n + 3)
+				margin-top: 31px
+				&::before
+					content: ''
+					position: absolute
+					top: 74px
+					right: 0
+					width: 1000px
+					height: 2px
+					background-image: url(../../static/img/line.svg)
+				#{$p}__date
+					z-index: 2
+		+mob
+			width: 100%
+			padding-left: 35px
+			padding-right: 0
+	&__date
+		+h3
+		max-width: 100px
+		word-wrap: break-word
+		margin-bottom: 58px
+		position: relative
+		letter-spacing: 0px
+		&::before
+			position: absolute
+			bottom: -36px
+			left: 0
+			content: ''
+			width: 19px
+			height: 19px
+			background-color: $white
+			border-radius: 50%
+			z-index: 1
+			+mob
+				bottom: inherit
+				left: -32px
+				top: 2px
+		&::after
+			position: absolute
+			bottom: -28px
+			left: 8px
+			content: ''
+			width: 3px
+			height: 3px
+			background-color: $pink
+			border-radius: 50%
+			z-index: 1
+			+mob
+				bottom: inherit
+				left: -24px
+				top: 10px
+		+mob
+			margin-bottom: 10px
+			max-width: 100%
+			font-size: 14px
+			line-height: 24px
+			&:not(:last-child)
+				margin-top: 35px
+	&__text
+		line-height: 16px
+		letter-spacing: .4px
+	.title
+		max-width: 70%
+		margin-bottom: 65px
+		& + .container
+			width: 992px
+			max-width: 992px
+			transform: translateX(20px)
+			+mob
+				width: 100%
+				max-width: 100%
+				transform: translateX(0)
+		+tab
+			max-width: 100%
+		+mob
+			max-width: 100%
+			margin-bottom: 0
+			

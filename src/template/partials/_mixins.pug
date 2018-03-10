@@ -1,0 +1,34 @@
+include ../components/**/*.pug
+
+mixin btn(className, text, type, target)
+	if type === 'download'
+		+b.A.btn(href="static/docs/pdf.pdf" target="_blank" class= className || '' data-popup-target= target || '')= text
+			+svg('download')
+	else
+		+b.A.btn(href="#!" class= className || '' data-popup-target= target || '')= text
+
+mixin customBtn(className, data, type, target)
+	button.play-btn(class = className || '' data-video-src = data || '' data-popup-target= target || '')
+		svg(version='1.1', xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', viewbox='0 0 120 120', style='enable-background:new 0 0 120 120;', xml:space='preserve')
+			defs
+				clippath#dodecagon-btn-clippath
+					path(d='M120,60l-8,30l-22,22l-30,8l-30-8L8,90L0,60l8-30L30,8l30-8l30,8l22,22L120,60z')
+			g(clip-path='url(#dodecagon-btn-clippath)')
+				path.dodecagon(d='M120,60l-8,30l-22,22l-30,8l-30-8L8,90L0,60l8-30L30,8l30-8l30,8l22,22L120,60z')
+				if type !== 'empty'
+					path.triangle(d='M56,68V52l12,8L56,68z')
+
+mixin accordion(list)
+	each accordion, index in list
+		+b.accordion
+			-
+				accordionTitle = [['When will I receive my DIMCOIN / DIM TOKENS?', 'What is the DIM?', 'When will I receive my DIMCOIN / DIM TOKENS?', 'When will I receive my DIMCOIN?'], ['2When will I receive my DIMCOIN / DIM TOKENS?', '2What is the DIM?', 'When will I receive my DIMCOIN', '2When will I receive my DIMCOIN?'], ['3When will I receive my DIMCOIN / DIM TOKENS?', 'What is the DIM?', '3When will I receive my DIMCOIN / DIM TOKENS?', '3When will I receive my DIMCOIN?'], ['4When will I receive my DIMCOIN / DIM TOKENS?', '4What is the DIM?', '4When will I receive my DIMCOIN / DIM TOKENS?', 'When will I receive my DIMCOIN?']],
+				accordionText = ['Duis mollis, luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.?', 'When will I receive my DIMCOIN / DIM TOKENS?Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat.', 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat. When will I receive my DIMCOIN?']
+			each title, index2 in accordionTitle
+				button(data-text-anim)
+					+e.toggle
+						span
+						span
+					+e.item= accordionTitle[index][index2]
+				+e.content
+					p= accordionText[index2]

@@ -1,0 +1,70 @@
+.documents
+	$p : &
+	padding: 86px 0 116px
+	background-color: $dark
+	.container
+		display: flex
+		flex-wrap: wrap
+	&__title
+		+h4
+		transition: color .3s linear
+		line-height: 18px
+		padding-left: 16px
+		+mob
+			padding-left: 0
+			margin-top: 12px
+	&__item
+		width: 25%
+		display: flex
+		color: $white
+		padding-right: 30px
+		position: relative
+		+desk
+			&:nth-child(1n + 5)
+				margin-top: 52px
+		+tab
+			&:nth-child(odd)
+				left: -23px
+			&:nth-child(even)
+				left: -8px
+			&:nth-child(1n + 3)
+				margin-top: 52px
+		.no-touch &
+			&:hover
+				color: $pink
+				svg
+					color: $pink
+		+tam
+			width: 50%
+		+mob
+			flex-direction: column
+			transform: translateX(0)
+			&:nth-child(1n + 3)
+				margin-top: 25px
+			&:nth-child(2n + 2)
+				padding-right: 0
+				transform: translateX(10px)
+	svg
+		font-size: 83px
+		min-width: 68px
+		width: 38px
+		color: $blue
+		transition: color .4s linear
+	.title
+		margin-bottom: 67px
+		& + .container
+			width: 992px
+			max-width: 992px
+			transform: translateX(20px)
+			+tab
+				+container-tab
+			+mob
+				width: 100%
+				max-width: 100%
+				transform: translateX(0)
+		+mob
+			margin-bottom: 28px
+	+tab
+		padding: 91px 0 116px
+	+mob
+		padding: 45px 0 55px

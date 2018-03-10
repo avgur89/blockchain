@@ -1,0 +1,21 @@
+-
+	socialList = ['facebook', 'twitter', 'linkedin', 'bitcointalk'];
+
++b.popup_news(tabindex='-1', role='dialog' data-popup-id="news")
+	+e.container_info.ps-init
+		+b.title_dark Lorem Ipsum is simply dummy text of the printing and typesetting.
+		+e.bg-img
+			img(src="static/img/news.jpg")
+		+e.date 10/11/2017
+		+e.news
+			p Bitcoin block height 491,407 was reached 23 October, more than a day earlier than anticipated, triggering the so called Bitcoin Gold hard fork. It is the second such fork of its kind since August, and another is predicted mid-November, Segwit2x, at block 494,784.
+			p Not long after celebrating block height 491,407, the Bitcoin Gold (BTG) team noticed 10 million hits per minute clogging up its web traffic requests. BTG’s Slack channel later attributed most of the hits to internet protocol (IP) addresses routed through China.
+			p BTG’s <a href="#!">founder and lead developer</a> are from China.
+			p It was a clear a DDoS campaign was used against the site, which rendered it essentially unavailable for four hours, causing numerous reports about either the team’s inability to insure against such basic attacks or the team’s lack of knowledge in critical areas of website security.
+		+e.share-title Share
+		+e.share-block
+			each item, index in socialList
+				a(href="#!" class= item)
+					span= item
+	+e.BUTTON.close.close-video-btn
+		+svg('close-menu')

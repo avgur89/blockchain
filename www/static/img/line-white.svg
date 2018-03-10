@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="2">
+    <pattern id="pattern"
+             patternUnits="userSpaceOnUse"
+             width="10px"
+             height="100%">
+        <rect width="1px" height="2px" fill="#fff"/>
+    </pattern>
+
+    <rect fill="url(#pattern)"
+          stroke="none"
+          width="100%"
+          height="100%"
+    />
+</svg>

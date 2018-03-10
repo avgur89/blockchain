@@ -1,0 +1,34 @@
+mixin footer()
+	+b.FOOTER.footer.block-dark
+		.container.container_large
+			+e.top
+				+e.flex
+					+e.col_left
+						+e.A.logo.get-top(href="#!") bittalent
+						+e.A.regular(href="static/docs/pdf.pdf" target="_blank") Disclaimer
+						+e.text The data content of this website is intended for general information purposes only and does not constitute solicitation of or an offer to purchase any securities. This website should be used for general research purposes only.
+					+e.col_right
+						+e.col
+							+e.title Get in touch
+							-contact = ['email', 'skype', 'telegram chat']
+							each item, index in contact
+								if index === 0
+									+e.A.regular_contact(href="mailto:writeus.@gmail.com")= item
+								else
+									+e.A.regular_contact(href="#!")= item
+						+e.col
+							+e.title Follow us
+							-social = ['Facebook', 'Twitter', 'Linkedin', 'bitcointalk']
+							for item in social
+								+e.A.regular_social(href="#!")= item
+				+e.col_form
+					+e.title Get updates
+					+e.FORM.form(action='#')
+						.form-group.has-success(data-anim-stagger='fade-top' data-prepare-anim data-mob-anim='group' data-mob-anim-stagger='fade-top')
+								input.form-input(type='email' id='formMail' autocomplete='off' required)
+								label.form-input-label(for='formMail'): span Your Email
+								.help-block Error
+						+e.A.send.thanks-popup-js(href="#!" data-popup-target="thanks")
+							+svg('arrow')
+			+e.bot
+				+e.copyright 2017 Copyright

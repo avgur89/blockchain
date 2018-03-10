@@ -1,0 +1,290 @@
+.popup
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	opacity: 0
+	display: flex
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+	visibility: hidden
+	z-index: 1050
+	overflow: auto
+	overflow-x: hidden
+	outline: 0
+	text-align: center
+	font-size: 0
+	transform: translate3d(0, 0, 0)
+	background-color: rgba(38, 32, 64, .9)
+	&:after
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+	&__video
+		width: 100%
+		height: 100%
+		object-fit: cover
+		font-family: 'object-fit: cover;'
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 2
+		cursor: pointer
+	&__container_info
+		text-align: left
+		max-width: 660px
+		display: flex
+		flex-direction: column
+		position: relative
+		margin: auto
+		will-change: transform
+		opacity: 0
+		transform: translateY(-10%)
+		transition: all .45s ease-in
+		background-color: #fff
+		padding: 50px 60px 80px
+		border-bottom: 60px solid white
+		.close-video-btn
+			top: 57px
+			right: 54px
+			+mob
+				top: 30px
+				right: 25px
+		input, label
+			padding: 0 20px 0
+		.title
+			margin-bottom: 52px
+			.top, .bot
+				display: block
+			+mob
+				margin-bottom: 40px
+		.btn
+			width: 250px
+			margin-top: 40px
+			text-align: center
+			+mob
+				width: 100%
+				min-width: 260px
+				max-width: 400px
+				margin: 30px auto 0
+		+mob
+			max-width: 320px
+			padding: 50px 30px 80px
+	&__form
+		display: flex
+		.form-group
+			width: 250px
+			height: 60px
+			border: 1px solid $pink
+			&:first-child
+				margin-right: 40px
+		+mob
+			flex-direction: column
+			.form-group
+				width: 100%
+				&:first-child
+					margin-right: 0
+					margin-bottom: 30px
+	&__msg
+		display: flex
+		img
+			width: 95px
+			height: 38px
+		&-text
+			+h3
+			line-height: 30px
+			letter-spacing: 1.74px
+			margin: 8px 0 0 27px
+		+mob
+			flex-direction: column
+			&-text
+				margin: 22px 0 0 35px
+				font-size: 14px
+				line-height: 24px
+				letter-spacing: 1.4px
+	&__bg-img
+		margin: 0 -40px 28px
+		height: 300px
+		img
+			+cover-img
+		+mob
+			margin: 0 -30px 28px
+	&__date
+		+h5
+		margin-bottom: 30px
+	&__news, &__descr
+		font-size: 14px
+		p
+			margin-bottom: 24px
+		a
+			color: $pink
+			+trs
+			.no-touch &
+				&:hover
+					color: $blue
+	&__descr
+		p
+			margin-bottom: 12px
+	&__share-title
+		+h3
+		margin-top: 23px
+		text-transform: none
+		letter-spacing: .9px
+	&__share-block
+		display: flex
+		margin: 25px -3px 60px
+		a
+			height: 60px
+			min-height: 60px
+			flex: 1 1 100%
+			margin: 0 2px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			color: $white
+			box-sizing: border-box
+			background-color: darkred
+			line-height: 60px
+			cursor: pointer
+			+h4
+			+trs
+			&.facebook
+				background-color: #526eab
+			&.twitter
+				background-color: #2ac5f6
+			&.linkedin
+				background-color: #047ab9
+			&.bitcointalk
+				background-color: #476d90
+			.no-touch &
+				&:hover
+					opacity: .7
+			+mob
+				margin-bottom: 5px
+				&:last-child
+					margin-bottom: 60px
+		+mob
+			flex-direction: column
+	&__social
+		margin-top: 20px
+		flex-direction: column
+	&__share-item
+		color: #047ab9
+		display: flex
+		align-items: center
+		svg
+			font-size: 24px
+			+trs
+		span
+			padding-left: 12px
+			+f($BenderBold, 11px, 14px, 3.2px, uppercase)
+			letter-spacing: 1.5px
+			line-height: 14px
+			+trs
+		.no-touch &
+			&:hover
+				color: $pink
+	&__name
+		+h3
+		color: $dark
+		margin-bottom: 12px
+	&__position
+		+h5
+		font-size: 10px
+		font-family: $BenderBold
+		color: $dark
+		opacity: .7
+	&__img
+		+cover-img
+		height: 220px
+		max-width: 220px
+	&__wrap
+		display: flex
+		margin-bottom: 30px
+		+mob
+			flex-direction: column
+	&_people
+		.popup__container
+			height: 90vh
+			max-height: 90vh
+			& > div:first-of-type
+				flex-shrink: 0
+		.col:first-child
+			width: 240px
+			flex: 0 0 240px
+		.col:last-child
+			padding-left: 20px
+		.close-video-btn
+			position: absolute
+			top: 5vh
+			left: calc(50% + 330px)
+			transform: translateX(50%)
+			color: #fff
+			+mob
+				color: $pink
+				top: calc(5vh + 10px)
+				left: calc(50% + 90px)
+	&_video
+		background-color: #262040
+		+mob
+			.popup__container
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+	&_news
+		.popup__container
+			width: 944px
+			max-width: 944px
+			height: 90vh
+			max-height: 90vh
+			position: relative
+			padding: 51px 40px 80px
+			+tam
+				width: calc(100% - 120px)
+				max-width: calc(100% - 120px)
+			+mob
+				width: 320px
+				max-width: 320px
+				padding: 50px 30px 60px
+		.title
+			margin-bottom: 32px
+		.close-video-btn
+			position: absolute
+			top: 5vh
+			left: calc(50% + 472px)
+			transform: translateX(50%)
+			color: #fff
+			+tab
+				left: calc(50% + 320px)
+			+mob
+				top: calc(5vh + 10px)
+				left: calc(50% + 90px)
+				color: $pink
+@media (max-width: 767px)
+	.popup
+		padding: 20px 0
+
+.popup.opened
+	opacity: 1
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+	visibility: visible
+	.popup__container_info
+		opacity: 1
+		transform: translateY(0)
+	.close-video-btn
+		opacity: 1
+		pointer-events: auto
+		max-width: 34px
+body.popup-opened
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	overflow: hidden

@@ -1,0 +1,19 @@
++b.SECTION.team
+    .container.container_large
+        +b.title
+            span.top маркетинг
+        .container
+            +e.BUTTON.prev
+                +svg('arrow')
+            +e.BUTTON.next
+                +svg('arrow')
+            +e.slider
+                -
+                    teamImg = ['static/img/team-9.jpg'],
+                    teamTitle = ['Артем Басараба'],
+                    teamDescr = ['Co founder & CEO'];
+                each item, index in teamImg
+                    +e.item.people-popup-js(href="#!" data-popup-target="people" data-text-anim data-delay= 1*index)
+                        +e.IMG.img(srcset= item alt='image')
+                        +e.DIV.title= teamTitle[index]
+                        +e.DIV.descr= teamDescr[index]

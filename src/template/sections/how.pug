@@ -1,0 +1,25 @@
+-
+    dataJSON = {
+    "video": [null, null, null, null, null],
+    "bgImg": ["static/img/s0.jpg", "static/img/s1.jpg", "static/img/s2.jpg", "static/img/s3.jpeg", "static/img/s4.jpg"],
+    "img": ["static/img/s0.jpg", "static/img/s1.jpg", "static/img/s2.jpg", "static/img/s3.jpeg", "static/img/s4.jpg"],
+    "text": ["Регистрируйся, добавляй информацию о себе и своих талантах", "Добавляй информацию о себе и своих талантах", "Регистрируйся", "Добавляй", "Участвуй"]
+    }
+
++b.SECTION.how
+    .container.container_large
+        .col
+            +e.slider-wrap
+                +e.video-wrap
+                    img(src='static/img/desktop.svg' alt='image')
+                    +e.video(data-video-src = dataJSON)
+                        video(src='empty' poster='' autoplay muted)
+                        +e.IMG.img(src='empty' alt='image')
+                +e.img-wrap
+                    +e.IMG.img(src='empty' alt='image')
+                    img(src='static/img/phone.png' alt='image')
+        .col.info-column
+            +b.title_white-dark how
+                span it work?
+            +e.descr-wrap
+            .timeline.timeline_video

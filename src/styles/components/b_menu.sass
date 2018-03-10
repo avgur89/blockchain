@@ -1,0 +1,117 @@
+.menu
+	$p: &
+	list-style: none
+	pointer-events: auto
+	svg
+		overflow: visible
+	li
+		padding: 7.5px 0
+		overflow: hidden
+		display: flex
+		justify-content: flex-end
+		svg, span
+			transition: all .4s linear
+		+tab
+			padding: 13px 0
+		+mob
+			overflow: visible
+			padding: 5px 0
+			svg
+				display: none
+	&__link
+		padding-right: 3px
+		transform: translateX(3px)
+		+f($Bender, 12px, 12px, 1.2px, uppercase)
+		svg:first-child
+			transform: rotate(180deg)
+		span
+			padding: 0 3px 0 5px
+		.no-touch &
+			&:hover
+				color: $pink
+				& + svg
+					color: $pink
+		&_invert.menu__link.is-hide, &_invert.menu__link.is-hide.is-active
+			color: $white
+			& + svg
+				color: $white
+		&_invert.menu__link.is-hide:not(.is-active)
+			color: $white!important
+			svg, span
+				color: $white!important
+				+mob
+					color: $pink!important
+			& + svg
+				color: $white!important
+		&.is-hide:not(.is-active)
+			display: block
+			transition: all .4s linear
+			transform: translateX(100%) translateX(- 7px)
+			+mob
+				transform: translateX(0%)
+			span
+				visibility: hidden
+				transition: all .4s linear
+				+mob
+					visibility: visible
+			svg
+				color: $pink
+			& + svg
+				color: $pink
+			.no-touch &
+				&:hover
+					transform: translateX(0)
+					svg
+						color: $dark
+					span
+						color: $dark
+						visibility: visible
+					& + svg
+						color: $dark
+		&.is-hide.is-active
+			color: $dark
+			& + svg
+				color: $dark
+			+mob
+				color: $white
+		&.is-overflow
+			visibility: hidden
+			span
+				color: transparent
+			svg
+				display: none
+			& + svg
+				display: none
+		+mob
+			+f($BenderBlack, 30px, 48px, 0px, uppercase)
+			color: $pink
+			position: relative
+			&.is-active
+				color: $white
+				&::after
+					content: ''
+					position: absolute
+					display: block
+					right: -20px
+					height: 5px
+					width: 5px
+					background-color: $white
+					top: 50%
+					transform: translateY(-50%)
+	&__close
+		position: absolute
+		top: 20px
+		right: 14px
+		width: 22px
+		height: 22px
+		border: none
+		padding: 0
+	+mob
+		position: absolute
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: flex-end
+		padding-right: 50px

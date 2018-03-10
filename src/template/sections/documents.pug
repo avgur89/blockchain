@@ -1,0 +1,15 @@
++b.SECTION.documents
+	.container.container_large
+		+b.title_white
+			span.top Документы
+		.container
+			-docList = ['Whitepaper', 'Whitepaper Summary', 'Whitepaper Technical', 'Terms and Conditions', 'Crowdsale', 'Presentation', 'Disclaimer', 'Privacy Policy']
+			each item, index in docList
+				if index > 3
+					+e.A.item(href="static/docs/pdf.pdf" target="_blank" data-text-anim data-delay= 2*index-4)
+						+svg('doc')
+						+e.title= item
+				else
+					+e.A.item(href="static/docs/pdf.pdf" target="_blank" data-text-anim data-delay= 2*index)
+						+svg('doc')
+						+e.title= item

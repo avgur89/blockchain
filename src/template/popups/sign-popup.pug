@@ -1,0 +1,16 @@
++b.popup_sign(tabindex='-1', role='dialog' data-popup-id="sign")
+	+e.container_info
+		+b.title_pink-dark Sign up
+			span for updates
+		+e.FORM.form(action='#')
+			.form-group.has-success(data-anim-stagger='fade-top' data-prepare-anim data-mob-anim='group' data-mob-anim-stagger='fade-top')
+				input.form-input(type='text' id='formName' autocomplete='off' required)
+				label.form-input-label(for='formName'): span Your name
+				.help-block Error
+			.form-group.has-success(data-anim-stagger='fade-top' data-prepare-anim data-mob-anim='group' data-mob-anim-stagger='fade-top')
+				input.form-input(type='email' id='formMail' autocomplete='off' required)
+				label.form-input-label(for='formMail'): span Your email
+				.help-block Error
+		+btn('', 'Подписаться')
+		+e.BUTTON.close.close-video-btn
+			+svg('close-menu')

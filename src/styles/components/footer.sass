@@ -1,0 +1,152 @@
+.footer
+	$p : &
+	color: $white
+	background-color: $dark
+	padding: 0 70px 0
+	z-index: 4
+	.container_large
+		margin: 78px auto 70px
+		+mob
+			margin: 38px 0 35px
+			width: 100%
+			max-width: 100%
+	+tab
+		padding: 0
+	+mob
+		padding: 0 30px 0
+	&__bot
+		display: flex
+		justify-content: space-between
+		+mob
+			margin-top: 43px
+	&__disclaimer
+		+trs
+		.no-touch &
+			&:hover
+				color: $pink
+	&__flex
+		display: flex
+		justify-content: space-between
+		flex: 1 1 auto
+		width: 100%
+		+mob
+			flex-direction: column
+			margin-bottom: 30px
+	&__col
+		padding-right: 30px
+		+mob
+			padding: 0
+		&_right
+			flex: 1 1 auto
+			width: 100%
+			display: flex
+			justify-content: flex-start
+			padding: 0 0 0 47px
+			+mob
+				padding: 0
+			.footer__col
+				width: 50%
+				padding-right: 30px
+				display: flex
+				flex-direction: column
+				+tab
+					//flex: 0 0 auto
+				&:last-child
+					padding-right: 0
+		&_left
+			display: flex
+			flex-direction: column
+			flex: 0 0 300px
+			+mob
+				flex: 1 1 auto
+				width: 100%
+				margin-bottom: 30px
+		&_form
+			flex: 0 0 300px
+			+tab
+				flex-direction: column
+				flex: 1 1 auto
+				display: flex
+				align-self: flex-end
+			+mob
+				flex: 1 1 auto
+				width: 100%
+				align-self: flex-start
+	&__regular
+		+mob
+			margin-bottom: 16px
+
+	&__copyright
+		+regular
+		letter-spacing: .5px
+	&__logo
+		+f($Bender, 16px, 16px, 3.2px, uppercase)
+		margin-bottom: 39px
+		+trs
+		.no-touch &
+			&:hover
+				color: $pink
+		+mob
+			margin-bottom: 27px
+	&__regular
+		+f($Bender, 12px, 14px, 3.2px, uppercase)
+		letter-spacing: 1.5px
+		line-height: 14px
+		margin-bottom: 16px
+		+trs
+		.no-touch &
+			&:hover
+				color: $pink
+		+mob
+			margin-bottom: 14px
+	&__top
+		display: flex
+		flex-wrap: nowrap
+		margin-bottom: 29px
+		+tab
+			flex-direction: column
+		+mob
+			flex-direction: column
+	&__title
+		+subtitle
+		text-transform: none
+		line-height: 18px
+		letter-spacing: 1.3px
+		margin-bottom: 38px
+		+tab
+			margin-bottom: 35px
+		+mob
+			font-size: 14px
+			margin-bottom: 24px
+			letter-spacing: 1px
+	&__text
+		+small
+		line-height: 24px
+		margin-top: -4px
+	&__form
+		display: flex
+		justify-content: space-between
+		box-shadow: 0 0 0 1px $pink
+		box-sizing: border-box
+		color: white
+		input
+			color: $white
+	&__send
+		height: 58px
+		width: 70px
+		min-width: 70px
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: $pink
+		svg
+			font-size: 10px
+			color: $white
+			+trs
+		&.disabled
+			opacity: .6
+			pointer-events: none
+		.no-touch &
+			&:hover
+				svg
+					color: $dark
